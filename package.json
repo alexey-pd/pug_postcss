@@ -18,8 +18,12 @@
   "homepage": "https://github.com/dojdev/gulpConf#readme",
   "devDependencies": {
     "autoprefixer": "^6.6.0",
+    "browser-sync": "^2.18.5",
     "del": "^2.2.2",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
+    "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "postcss": "^5.2.8"
   },

@@ -1,0 +1,19 @@
+{
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "my gulpConf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dojdev/gulpConf.git"
+  },
+  "author": "dojdev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dojdev/gulpConf/issues"
+  },
+  "homepage": "https://github.com/dojdev/gulpConf#readme"
+}

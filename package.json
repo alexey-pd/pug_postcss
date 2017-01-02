@@ -15,5 +15,19 @@
   "bugs": {
     "url": "https://github.com/dojdev/gulpConf/issues"
   },
-  "homepage": "https://github.com/dojdev/gulpConf#readme"
+  "homepage": "https://github.com/dojdev/gulpConf#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.6.0",
+    "del": "^2.2.2",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "postcss": "^5.2.8"
+  },
+  "config": {
+    "ghPages": "http://dojdev.github.io/gulpConf/index.html",
+    "directories": {
+      "src": "./src",
+      "dist": "./dist"
+    }
+  }
 }

@@ -16,9 +16,9 @@ const
             autoprefixer({ browsers:[ '>5%' ] })
           ];
 
-          return gulp.src(dirs.src + '/styles/in.css')
+          return gulp.src(dirs.src + '/styles/some.css')
                   .pipe(postcss(processors))
-                  .pipe(rename('index.css'))
+                  .pipe(rename('main.css'))
                   .pipe(gulp.dest(dirs.dist + '/assets/styles'))
       });
 

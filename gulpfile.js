@@ -45,3 +45,12 @@ const
         .pipe(pug())
         .pipe(gulp.dest(dirs.dist));
     });
+
+    // gulp.task('default',
+    //   gulp.series('work')
+    // );
+
+    gulp.task('pages', function() {
+      return gulp.src('./dist/**/*')
+        .pipe(ghPages());
+    });

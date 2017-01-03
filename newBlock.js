@@ -11,7 +11,7 @@ const rl = createInterface(process.stdin, process.stdout);
 const BLOCKS_DIR = path.join(__dirname, 'src/blocks');
 
 const fileSources = {
-	pug: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\t+e.inner\n\t\tblock`,
+	pug: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\t+e.inner\n\t\t\tblock\n\t\t\tp {blockName}`,
 	css: `.{blockName}{\n\tdisplay: block;\n}`
 };
 

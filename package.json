@@ -22,6 +22,7 @@
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.9.1",
     "del": "^2.2.2",
+    "fs": "0.0.1-security",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-flatten": "^0.3.1",
@@ -31,17 +32,21 @@
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
+    "path": "^0.12.7",
     "postcss": "^5.2.8",
     "postcss-assets": "^4.1.0",
     "postcss-cssnext": "^2.9.0",
     "postcss-import": "^9.0.0",
-    "postcss-nested": "^1.0.0"
+    "postcss-nested": "^1.0.0",
+    "readline": "^1.3.0"
   },
   "config": {
     "ghPages": "http://dojdev.github.io/gulpConf/index.html",
     "directories": {
       "src": "./src",
-      "dist": "./dist"
+      "dist": "./app",
+      "styles": "./blocks/**/**.css",
+      "blocks": "./blocks/",
     }
   }
 }

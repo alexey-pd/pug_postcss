@@ -25,13 +25,6 @@ const
       uglify = require('gulp-uglify'),
       concat = require('gulp-concat');
 
-      var path = {
-        css: [
-          '/blocks/**/**.css',
-        ]
-      };
-
-
       gulp.task('style', function(){
         const
           processors = [
@@ -39,15 +32,15 @@ const
             autoprefixer({ browsers:[ '>5%' ] }),
             nested(),
             assets({
-              loadPaths: ['/assets/'],
-              relativeTo: '/assets/styles/'
+              loadPaths: ['dist/assets/images/'],
+              relativeTo: 'dist/assets/styles/'
             }),
             mqpacker({ sort: true }),
             cssnano(),
 
           ];
 
-          return gulp.src(dirs.src + path.css)
+          return gulp.src(dirs.src + dirs.styles)
                   .pipe(plumber({ errorHandler: '' }))
                   .pipe(concat('app.css'))
                   .pipe(sourcemaps.init())
@@ -58,17 +51,42 @@ const
       });
 
       gulp.task('watch', function(){
-          gulp.watch(dirs.src + '/blocks/**/*.css', ['style'])
+          gulp.watch(dirs.src + '/blocks/**/*.css',    ['style'])
+          gulp.watch(dirs.src + '/blocks/**/*.pug',    ['pug'])
           gulp.watch(dirs.src + '/templates/**/*.pug', ['pug'])
       });
 
-      gulp.task('default', ['pug', 'style', 'watch']);
+      gulp.task('default', ['pug', 'style', 'copyPics', 'watch', 'browser-sync']);
 
       gulp.task('del', function () {
-        console.log('dist очищен');
+        console.log('app clean');
         return del([
           dirs.dist + '/**/*'
         ]);
+      });
+
+      gulp.task('delBlocks', function () {
+        console.log('blocks clean');
+        return del([
+          dirs.blocks + '/**/*'
+        ]);
+      });
+
+      gulp.task('browser-sync', function(){
+          browserSync.init({
+
+          server: {
+            baseDir: "./app/"
+            },
+            port: 3000,
+            startPath: '/index.html',
+            // proxy: "gulp.dev"
+          });
+
+      });
+
+      gulp.task('reload', function(){
+        browserSync.reload();
       });
 
       gulp.task('pug', function() {
@@ -77,6 +95,7 @@ const
         .pipe(plumber({ errorHandler: '' }))
         .pipe(pug())
         .pipe(gulp.dest(dirs.dist));
+        browserSync.stream();
     });
 
     gulp.task('copyPics', function() {
@@ -86,6 +105,6 @@ const
     });
 
     gulp.task('pages', function() {
-      return gulp.src('./dist/**/*')
+      return gulp.src('./app/**/*')
         .pipe(ghPages());
     });

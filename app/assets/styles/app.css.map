@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.css"],"names":[],"mappings":"AAAA,KACE,iCAA+B,CAChC","file":"app.css","sourcesContent":["body{\n  background: resolve('cat.jpg');\n}\n"],"sourceRoot":"/source/"}

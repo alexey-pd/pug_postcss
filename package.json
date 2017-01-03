@@ -46,7 +46,7 @@
       "src": "./src",
       "dist": "./app",
       "styles": "./src/blocks/**/**.css",
-      "blocks": "./src/blocks/",
+      "blocks": "./src/blocks/"
     }
   }
 }

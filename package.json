@@ -45,8 +45,8 @@
     "directories": {
       "src": "./src",
       "dist": "./app",
-      "styles": "./src/blocks/**/**.css",
-      "blocks": "./src/blocks/"
+      "styles": "/blocks/**/**.css",
+      "blocks": "/blocks/"
     }
   }
 }

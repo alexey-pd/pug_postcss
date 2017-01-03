@@ -11,8 +11,8 @@ const rl = createInterface(process.stdin, process.stdout);
 const BLOCKS_DIR = path.join(__dirname, 'src/blocks');
 
 const fileSources = {
-	pug: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\tblock\n`,
-	css: `.{blockName}{\n\tdisplay block\n}`
+	pug: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\t+e.inner\n\t\tblock`,
+	css: `.{blockName}{\n\tdisplay: block;\n}`
 };
 
 function validateBlockName(blockName) {

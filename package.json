@@ -18,6 +18,7 @@
   "homepage": "https://github.com/dojdev/gulpConf#readme",
   "devDependencies": {
     "autoprefixer": "^6.6.0",
+    "bemto.jade": "^1.0.3",
     "browser-sync": "^2.18.5",
     "css-mqpacker": "^5.0.1",
     "cssnano": "^3.9.1",
@@ -32,6 +33,7 @@
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
+    "jade-injected": "^1.0.2",
     "path": "^0.12.7",
     "postcss": "^5.2.8",
     "postcss-assets": "^4.1.0",
@@ -46,7 +48,7 @@
       "src": "./src",
       "dist": "./app",
       "styles": "/blocks/**/**.css",
-      "blocks": "/blocks/"
+      "blocks": "./src/blocks/"
     }
   }
 }

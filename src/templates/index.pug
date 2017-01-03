@@ -1,4 +1,10 @@
-link(rel="stylesheet" href="assets/styles/app.css")
+extend _layout/page
 
-h1 hello world lallal bbb
-include ../blocks/some/some
+//- include ../blocks/some/some
+
+block head
+  - pageTitle = 'Страница';
+
+block content
+  h1 content
+  //- +some()

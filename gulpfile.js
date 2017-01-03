@@ -62,12 +62,19 @@ const
           gulp.watch(dirs.src + '/templates/**/*.pug', ['pug'])
       });
 
-      gulp.task('default', ['pug', 'style', 'watch']);
+      gulp.task('default', ['pug', 'copyPics', 'style', 'watch']);
 
       gulp.task('del', function () {
-        console.log('dist очищен');
+        console.log('app clean');
         return del([
           dirs.dist + '/**/*'
+        ]);
+      });
+
+      gulp.task('delBlocks', function () {
+        console.log('blocks clean');
+        return del([
+          dirs.blocks + '/**/*'
         ]);
       });
 

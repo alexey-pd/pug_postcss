@@ -3,5 +3,21 @@
 }
 
 .yo{
-  color: #f44;
+  color: #f55;
+
+  &__check{
+    color: #000;
+  }
+
+  .hello{
+    color: #555;
+  }
+
+  .ok{
+    display: block;
+  }
+}
+
+::placeholder{
+  color: #000;
 }

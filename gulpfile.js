@@ -14,12 +14,14 @@ const
       plumber = require('gulp-plumber'),
       pug = require('gulp-pug'),
       sourcemaps = require('gulp-sourcemaps'),
-      cssnano = require('gulp-cssnano');
+      cssnano = require('gulp-cssnano'),
+      nested = require('postcss-nested');
 
       gulp.task('style', function(){
         const
           processors = [
-            autoprefixer({ browsers:[ '>5%' ] })
+            autoprefixer({ browsers:[ '>5%' ] }),
+            nested(),
           ];
 
           return gulp.src(dirs.src + '/styles/some.css')
@@ -38,6 +40,8 @@ const
           gulp.watch(dirs.src + '/styles/*.css', ['style'])
 
       });
+
+      gulp.task('default', ['style', 'watch']);
 
       gulp.task('del', function () {
         console.log('dist очищен');

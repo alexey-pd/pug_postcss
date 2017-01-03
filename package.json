@@ -26,7 +26,8 @@
     "gulp-postcss": "^6.2.0",
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
-    "postcss": "^5.2.8"
+    "postcss": "^5.2.8",
+    "postcss-nested": "^1.0.0"
   },
   "config": {
     "ghPages": "http://dojdev.github.io/gulpConf/index.html",

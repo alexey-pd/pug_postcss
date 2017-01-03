@@ -1,3 +1,7 @@
 .some{
   display: flex;
 }
+
+.another{
+  display: none;
+}

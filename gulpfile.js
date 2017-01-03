@@ -13,7 +13,8 @@ const
       ghPages = require('gulp-gh-pages'),
       plumber = require('gulp-plumber'),
       pug = require('gulp-pug'),
-      sourcemaps = require('gulp-sourcemaps');
+      sourcemaps = require('gulp-sourcemaps'),
+      cssnano = require('gulp-cssnano');
 
       gulp.task('style', function(){
         const
@@ -26,6 +27,7 @@ const
                   .pipe(sourcemaps.init())
                   .pipe(rename('main.css'))
                   .pipe(postcss(processors))
+                  .pipe(cssnano())
                   .pipe(sourcemaps.write('/'))
                   .pipe(gulp.dest(dirs.dist + '/assets/styles'))
                   .pipe(browserSync.stream());

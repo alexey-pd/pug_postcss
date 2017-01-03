@@ -1,19 +1,18 @@
 'use strict';
 
-import fs from 'fs';
-import path from 'path';
-import { createInterface } from 'readline';
+const
+  fs   = require('fs'),
+  path = require('path'),
+  readline = require('readline'),
+  createInterface = readline.createInterface;
+
 const rl = createInterface(process.stdin, process.stdout);
 
-// folder with all blocks
-const BLOCKS_DIR = path.join(__dirname, 'app/blocks');
+const BLOCKS_DIR = path.join(__dirname, 'src/blocks');
 
-// //////////////////////////////////////////////////////////////////////////////////////////////////
-
-// default content for files in new block
 const fileSources = {
-	jade: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\tblock\n`,
-	styl: `.{blockName}\n\tdisplay block\n`
+	pug: `mixin {blockName}()\n\t+b.{blockName}&attributes(attributes)\n\t\tblock\n`,
+	css: `.{blockName}{\n\tdisplay block\n}`
 };
 
 function validateBlockName(blockName) {
@@ -96,8 +95,6 @@ function printErrorMessage(errText) {
 	rl.close();
 }
 
-// //////////////////////////////////////////////////////////////////////////
-
 function initMakeBlock(candidateBlockName) {
 	const blockNames = candidateBlockName.trim().split(/\s+/);
 
@@ -112,10 +109,9 @@ function initMakeBlock(candidateBlockName) {
 			.then(files => {
 				const line = '-'.repeat(48 + blockName.length);
 				console.log(line);
-				console.log(`The block has just been created in 'app/blocks/${blockName}'`);
+				console.log(`The block has just been created in 'src/blocks/${blockName}'`);
 				console.log(line);
 
-				// Displays a list of files created
 				files.forEach(file => console.log(file));
 
 				rl.close();
@@ -130,20 +126,10 @@ function initMakeBlock(candidateBlockName) {
 	return Promise.all(promises);
 }
 
-
-// //////////////////////////////////////////////////////////////////////////
-//
-// Start here
-//
-
-// Command line arguments
 const blockNameFromCli = process.argv
 		.slice(2)
-		// join all arguments to one string (to simplify the capture user input errors)
 		.join(' ');
 
-// If the user pass the name of the block in the command-line options
-// that create a block. Otherwise - activates interactive mode
 if (blockNameFromCli !== '') {
 	initMakeBlock(blockNameFromCli).catch(printErrorMessage);
 } else {

@@ -4,3 +4,5 @@ node_modules
 .npm
 .git
 .DS_Store
+src/blocks/
+src/templates/test.pug

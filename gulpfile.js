@@ -33,6 +33,12 @@ const
                   .pipe(browserSync.stream());
       });
 
+      gulp.task('watch', function(){
+
+          gulp.watch(dirs.src + '/styles/*.css', ['style'])
+
+      });
+
       gulp.task('del', function () {
         console.log('dist очищен');
         return del([

@@ -5,4 +5,5 @@ node_modules
 .git
 .DS_Store
 src/blocks/
+!src/blocks/variables.css
 src/templates/test.pug

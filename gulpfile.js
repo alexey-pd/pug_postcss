@@ -6,7 +6,6 @@ const
       dirs          = pjson.config.directories,
       ghPagesUrl    = pjson.config.ghPages,
       postcss       = require('gulp-postcss'),
-      autoprefixer  = require('autoprefixer'),
       rename        = require('gulp-rename'),
       del           = require('del'),
       browserSync   = require('browser-sync').create(),
@@ -16,22 +15,24 @@ const
       sourcemaps    = require('gulp-sourcemaps'),
       cssnano       = require('cssnano'),
       cssnext       = require('postcss-cssnext'),
-      nested        = require('postcss-nested'),
       mqpacker      = require('css-mqpacker'),
       assets        = require('postcss-assets'),
       flatten       = require('gulp-flatten'),
       fs            = require('fs'),
       atImport      = require('postcss-import'),
       uglify        = require('gulp-uglify'),
-      concat        = require('gulp-concat');
+      concat        = require('gulp-concat'),
+      grid          = require('postcss-flexboxgrid'),
+      clearfix      = require('postcss-clearfix');
 
       gulp.task('style', function(){
 
          const
           processors = [
             atImport(),
-            autoprefixer({ browsers:[ '>5%' ] }),
-            nested(),
+            cssnext(),
+            grid({ columns: 12, gutter: 30 }),
+            clearfix(),
             assets({
               loadPaths: ['dist/assets/images/'],
               relativeTo: 'dist/assets/styles/'

@@ -7,3 +7,4 @@ node_modules
 src/blocks/
 !src/blocks/variables.css
 src/templates/test.pug
+.gitignore

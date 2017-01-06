@@ -23,7 +23,8 @@ const
       uglify        = require('gulp-uglify'),
       concat        = require('gulp-concat'),
       grid          = require('postcss-flexboxgrid'),
-      clearfix      = require('postcss-clearfix');
+      clearfix      = require('postcss-clearfix'),
+      data          = require('gulp-data');
 
       gulp.task('style', function(){
 
@@ -92,6 +93,7 @@ const
 
         return gulp.src(dirs.src + '/templates/*.pug')
           .pipe(plumber({ errorHandler: '' }))
+          .pipe(data(file => require(dirs.src + '/data.json')))
           .pipe(pug())
           .pipe(gulp.dest(dirs.dist));
           browserSync.stream();

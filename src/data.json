@@ -1,0 +1,24 @@
+{
+    "menuItems": [
+        {
+            "title": "Ремонт",
+            "link": "#work"
+        },
+        {
+            "title": "Компания",
+            "link": "#company"
+        },
+        {
+            "title": "Отзывы",
+            "link": "#feedback"
+        },
+        {
+            "title": "Контакты",
+            "link": "#contacts"
+        },
+        {
+            "title": "Статус ремонта",
+            "link": "#status"
+        }
+    ]
+}

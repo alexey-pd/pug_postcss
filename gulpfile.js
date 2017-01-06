@@ -97,6 +97,7 @@ const
           .pipe(pug())
           .pipe(gulp.dest(dirs.dist));
           browserSync.stream();
+          browserSync.reload();
       });
 
       gulp.task('copyPics', function() {

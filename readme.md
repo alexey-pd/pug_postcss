@@ -1,0 +1,1 @@
+node newBlockHtml block1 block2 block3 создать несколько блоков и записать базовый контент и стили

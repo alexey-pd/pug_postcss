@@ -1,24 +1,13 @@
 {
-    "menuItems": [
+    "data": [
         {
-            "title": "Ремонт",
-            "link": "#work"
+            "caption": "Gulp"
         },
         {
-            "title": "Компания",
-            "link": "#company"
+            "caption": "Pug"
         },
         {
-            "title": "Отзывы",
-            "link": "#feedback"
-        },
-        {
-            "title": "Контакты",
-            "link": "#contacts"
-        },
-        {
-            "title": "Статус ремонта",
-            "link": "#status"
+            "caption": "PostCSS"
         }
     ]
 }

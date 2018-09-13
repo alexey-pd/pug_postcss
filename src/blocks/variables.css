@@ -1,6 +1,0 @@
-@custom-media --small-viewport (max-width: 319px);
-@custom-media --iphone-viewport (min-width : 320px);
-@custom-media --phone-viewport (min-width : 480px);
-@custom-media --tablet-viewport (min-width : 768px);
-@custom-media --medium-viewport (min-width : 992px);
-@custom-media --desktop-viewport (min-width : 1200px));

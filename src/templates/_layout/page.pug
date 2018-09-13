@@ -1,10 +1,13 @@
 include _includes/bemtoo/bemto.pug
 include _includes/page
 include _includes/scripts
+include _includes/blocks
 
 doctype html
 html(lang='ru')
 	include _includes/head
-	+page('page-main')
+	+page(pageClass)
+		//- include _includes/svg
 		block content
-		//- +scripts(['app.min.js'])
+		block scripts
+		+scripts(['app.min.js'])

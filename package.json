@@ -1,21 +1,26 @@
 {
-  "name": "gulp",
-  "version": "1.0.0",
-  "description": "my gulpConf",
+  "name": "clean",
+  "version": "2.0.0",
+  "description": "pug_postcss",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "node_modules/gulp/bin/gulp.js",
+    "start": "npm run gulp",
+    "build": "node_modules/gulp/bin/gulp.js build",
+    "clean": "npm run gulp delBlocks & npm run gulp del",
+    "pages": "npm run gulp pages"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dojdev/gulpConf.git"
+    "url": "git+https://github.com/alexey_pd/pug_postcss.git"
   },
-  "author": "dojdev",
+  "author": "Alexey Pudnikov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dojdev/gulpConf/issues"
+    "url": "https://github.com/alexey_pd/pug_postcss/issues"
   },
-  "homepage": "https://github.com/dojdev/gulpConf#readme",
+  "homepage": "https://github.com/alexey_pd/pug_postcss#readme",
   "devDependencies": {
     "autoprefixer": "^6.6.0",
     "bemto.jade": "^1.0.3",
@@ -33,8 +38,8 @@
     "gulp-postcss": "^6.2.0",
     "gulp-pug": "^3.2.0",
     "gulp-rename": "^1.2.2",
+    "gulp-svg-sprites": "^4.1.2",
     "gulp-uglify": "^2.0.0",
-    "jade-injected": "^1.0.2",
     "path": "^0.12.7",
     "postcss": "^5.2.8",
     "postcss-assets": "^4.1.0",
@@ -42,19 +47,20 @@
     "postcss-cssnext": "^2.9.0",
     "postcss-flexboxgrid": "^0.1.0",
     "postcss-import": "^9.0.0",
+    "postcss-input-range": "^4.0.0",
     "postcss-nested": "^1.0.0",
-    "readline": "^1.3.0"
+    "readline": "^1.3.0",
+    "gulp": "^3.9.1",
+    "gulp-markdown-it": "^0.1.1"
   },
   "config": {
-    "ghPages": "http://dojdev.github.io/gulpConf/index.html",
+    "ghPages": "http://alexey_pd.github.io/pug_postcss/index.html",
     "directories": {
       "src": "./src",
       "dist": "./app",
-      "styles": "/blocks/**/**.css",
-      "blocks": "./src/blocks/"
+      "blocks": "./src/blocks/",
+      "styles": "/blocks/_blocks.css",
+      "scripts": "/blocks/**/*.js"
     }
-  },
-  "dependencies": {
-    "gulp-markdown-it": "^0.1.1"
   }
 }

@@ -1,8 +1,7 @@
 extend _layout/page
-//- include ../blocks/index/index
 
 block head
-  - pageTitle = 'index page';
+  - pageTitle = 'page';
 
 block content
-  //- +index()
+  +index(data[0].index)
